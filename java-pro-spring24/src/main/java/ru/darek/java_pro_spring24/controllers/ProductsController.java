@@ -23,24 +23,20 @@ public class ProductsController {
         logger.info("Request details for product with id = {}", id);
         return productsService.getProductById(id);
     }
-
     @GetMapping
     public List<Product> getAllProducts() {
         logger.info("Request for all products");
         return productsService.getAllProducts();
     }
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Product createNewProduct(@RequestBody CreateProductDto createProductDto) {
         logger.info("Request for create product: {} -- {} - {}", createProductDto, createProductDto.getTitle(), createProductDto.getPrice());
         return productsService.createProduct(createProductDto.getTitle(), createProductDto.getPrice());
     }
-
     @DeleteMapping
     public Boolean deleteProductById(@RequestHeader String productId) {
         logger.info("Request delete for product with id = {}", productId);
         return productsService.deleteProductById(productId);
     }
-
 }

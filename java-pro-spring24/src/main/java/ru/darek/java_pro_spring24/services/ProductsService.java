@@ -15,7 +15,6 @@ public class ProductsService {
     private static final Logger logger = LoggerFactory.getLogger(ProductsService.class.getName());
     private final ProductsRepo productsRepo;
 
-
     public Product getProductById(String id) {
         logger.info("Request product details by id = {}", id);
         return productsRepo.findById(id).get();

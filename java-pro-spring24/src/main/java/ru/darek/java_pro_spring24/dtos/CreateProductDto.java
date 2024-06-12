@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class CreateProductDto {
+
     private String title;
     private Long price;
+
 }
