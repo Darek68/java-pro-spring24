@@ -35,8 +35,9 @@ public class ProductsController {
         return productsService.createProduct(createProductDto.getTitle(), createProductDto.getPrice());
     }
     @DeleteMapping
-    public Boolean deleteProductById(@RequestHeader String productId) {
+    public List<Product> deleteProductById(@RequestHeader String productId) {
         logger.info("Request delete for product with id = {}", productId);
-        return productsService.deleteProductById(productId);
+        productsService.deleteProductById(productId);
+        return productsService.getAllProducts();
     }
 }

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class ProductsInMemoryRepo implements ProductsRepo {
+public class ProductsInMemoryRepo implements ProductsRepository {
     private List<Product> products;
 
     @PostConstruct
